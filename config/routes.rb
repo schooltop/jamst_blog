@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :articles
+  resources :categories
+  resources :tags
+  resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -46,6 +50,8 @@ Rails.application.routes.draw do
   #   end
   #   resources :posts, concerns: :toggleable
   #   resources :photos, concerns: :toggleable
+
+  root to: 'articles#index'
 
   # Example resource route within a namespace:
   #   namespace :admin do
