@@ -15,6 +15,10 @@ set :user, 'mybimba'
 set :deploy_to, '/var/www/jamst_blog'
 set :repository, 'git@github.com:schooltop/jamst_blog.git'
 set :branch, 'master'
+set :rails_env, 'production'
+
+set :cmd_prefix, -> { "RAILS_ENV=#{rails_env}" }
+set :rack_prefix, -> { %{RACK_ENV="#{rails_env}" #{bundle_bin} exec} }
 
 # For system-wide RVM install.
 #   set :rvm_path, '/usr/local/rvm/bin/rvm'
