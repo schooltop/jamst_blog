@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.0.0.rc2'
-# Use sqlite3 as the database for Active Record
-gem 'mysql2'
 # Use SCSS for stylesheets
 #gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -29,15 +27,61 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # 服务器
 gem 'passenger'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
+# Store
+gem 'mysql2'
+# gem 'hiredis'
+# gem 'redis'
+# gem 'redis-objects'
+# gem 'redis-namespace'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# Utils
+# gem 'sidekiq'
+gem 'jwt'
+gem 'httparty'
+
+# Third Part
+gem 'kaminari', github: 'amatsuda/kaminari'
+gem 'simple_form'
+gem 'default_form', github: 'qinmingyuan/default_form', tag: 'v1.3'
+# 权限控制
+gem 'devise', git: 'https://github.com/plataformatec/devise.git'
+gem 'cancancan'
+gem 'rolify'
+# 全文检索
+# gem 'elasticsearch'
+# gem 'elasticsearch-model'
+# gem 'elasticsearch-rails'
+gem 'spreadsheet'
+gem 'roo', require: false
+# gem 'axlsx', require: false
+# 生成pdf
+# gem 'prawn'
+# gem 'prawn-table'
+
+#gem 'bootstrap-sass', '~> 3.3.6'
+#gem "cells-rails"
+# 定时任务
+gem 'rufus-scheduler'
+#gem 'whenever', :require => false
+# 文件上传
+gem 'carrierwave'
+# 二维码
+# gem 'barby'
+# SEO优化
+# gem 'meta-tags'
+# 图片mongo保存
+# gem 'mongo'
+# gem 'asset_sync'
+# 在线支付
+# gem 'alipay', '~> 0.12.0'
+# gem 'rqrcode'
+# gem 'wx_pay'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'byebug', platform: :mri
+  gem 'pry-rails'
 end
 
 # 部署
@@ -48,7 +92,6 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
