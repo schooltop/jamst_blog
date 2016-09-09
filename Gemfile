@@ -44,7 +44,7 @@ gem 'kaminari', github: 'amatsuda/kaminari'
 gem 'simple_form'
 gem 'default_form', github: 'qinmingyuan/default_form', tag: 'v1.3'
 # 权限控制
-gem 'devise', git: 'https://github.com/plataformatec/devise.git'
+gem 'devise'#, git: 'https://github.com/plataformatec/devise.git'
 gem 'cancancan'
 gem 'rolify'
 # 全文检索

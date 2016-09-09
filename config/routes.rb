@@ -2,7 +2,15 @@ Rails.application.routes.draw do
   resources :articles
   resources :categories
   resources :tags
-  resources :users
+  devise_for :employees, path: "admin", path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', sign_up: 'cmon_let_me_in' }, controllers: { sessions: "admin/sessions", passwords: "admin/passwords"}
+  devise_for :users, controllers: { sessions: "web/sessions", registrations: "web/registrations", passwords: "web/passwords" }
+  devise_scope :user do
+     post "/find_password" =>"web/passwords#get_password"
+     post "/find_email" =>"web/passwords#find_email"
+     post "/check_email" =>"web/passwords#check_email"
+     get "/edit_password" =>"web/passwords#edit"
+     post "/update_password" =>"web/passwords#update"
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -10,7 +18,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  #   get 'products/:id' => 'catalog#view'x
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
