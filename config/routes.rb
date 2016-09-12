@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   resources :articles
   resources :categories
   resources :tags
+  namespace :admin do
+    resources :employees
+  end
   devise_for :employees, path: "admin", path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', sign_up: 'cmon_let_me_in' }, controllers: { sessions: "admin/sessions", passwords: "admin/passwords"}
   devise_for :users, controllers: { sessions: "web/sessions", registrations: "web/registrations", passwords: "web/passwords" }
   devise_scope :user do
