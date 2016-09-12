@@ -1,0 +1,275 @@
+
+<% cache do %>
+<body>
+<div class="headTop headSub">
+  <div class="wrap clearfix">
+    <div class="fl">
+      <dl class="clearfix">
+        <dd>
+          <%= link_to 'LOG IN', new_user_session_path %>
+          <i class="line"></i>
+        </dd>
+        <dd>
+          <a href="#">REGISTRATION</a>
+        </dd>
+      </dl>
+    </div>
+
+    <div class="fr">
+      <dl class="clearfix">
+        <dd>
+          <%= link_to 'FREE SOURCING', free_sourcing_path %>
+          <i class="line"></i>
+        </dd>
+        <dd>
+          <%= link_to 'SELL PRODUCTS', sell_products_path %>
+          <i class="line"></i>
+        </dd>
+        <dd>
+
+          <%= link_to 'MY ACCOUNT',  my_account_root_path %>
+          <i class="line"></i>
+        </dd>
+        <dt>
+          <i></i>
+          <%= link_to 'F&Q', faq_path %>
+        </dt>
+      </dl>
+    </div>
+  </div>
+</div>
+<div class="registerWrap">
+  <div class="registerMain headMainSub">
+    <div class="wrap">
+      <div class="registerHead">
+        <a href="/" class="logo"></a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="registration clearfix">
+      <div class="createAccount">
+        <h3 class="clearfix"><i></i><span>Create Your Account</span></h3>
+        <p class="profile">With this simple sign-up step, you can enjoy iChemical services for free sourcing, free product exposure and unlimited price check. </p>
+        <div class="errorExplanation" style="display:none;">
+          <h2>Clank!</h2>
+          <ul>
+            <li>FirstName can't be blank</li>
+            <li>LastName can't be blank</li>
+            <li>Email can't be blank</li>
+            <li>Password can't be blank</li>
+            <li>Company Name can't be blank</li>
+            <li>Telephone Number can't be blank</li>
+          </ul>
+        </div>
+        <div class="step">
+
+          <%= form_for(@user, url: user_registration_path(@user)) do |f| %>
+
+              <div class="title"><span class="firstTit"></span></div>
+              <dl class="clearfix">
+
+                <dt>First Name</dt>
+                <dd>
+                  <div class="form-group">
+                  <input class="form-control signTxt_short" id="india_user_first_name" name="user[first_name]" type="text" value="<%= params[:first_name] %>" />
+                  </div>
+                </dd>
+
+
+
+                <dt class="nameShort">Last Name</dt>
+                <dd>
+                  <input class="form-control signTxt_short" id="india_user_last_name" name="user[last_name]" type="text" value="<%= params[:first_name] %>" />
+
+                </dd>
+                <dd id="last_name_tip" style="display:none">
+                  <i></i>
+                </dd>
+
+              </dl>
+
+
+              <dl class="clearfix">
+                <dt>E-mail</dt>
+                <dd>
+                  <div class="form-group">
+                  <input class="form-control signTxt" id="india_user_email" name="user[email]" type="text" value="<%= params[:email] %>" onblur="find_email()" >
+                  <label class="error" style="display:none" id ="li_1" >The mail has been registered.</label>
+                  </div>
+                </dd>
+                <dd id="email_tip" style="display:none">
+                  <i></i>
+                </dd>
+              </dl>
+              <dl class="clearfix">
+                <dt>Password</dt>
+                <dd>
+                  <div class="form-group">
+                  <input class="form-control signTxt" id="india_user_password" name="user[password]" type="password" placeholder="At least 8 characters">
+                 </div>
+                </dd>
+                <dd id="password_tip" style="display:none">
+                  <i></i>
+                </dd>
+              </dl>
+              <dl class="clearfix">
+                <dt>Password Confirmation</dt>
+                <dd>
+                  <div class="form-group">
+                  <input class="form-control signTxt" id="india_user_password_confirmation" name="user[password_confirmation]"
+                         placeholder="Type in password again" type="password" >
+                  </div>
+                </dd>
+                <dd id="password_confirmation_tip" style="display:none">
+                  <i></i>
+                </dd>
+              </dl>
+
+
+              <dl class="clearfix">
+                <dt>Personal Contact</dt>
+                <dd>
+                  <div class="form-group">
+                  <input class="form-control signTxt" id="india_user_mobile" name="user[mobile]" type="text" value="<%= params[:mobile] %>" placeholder="Cell No. or Land Line">
+                 </div>
+                </dd>
+                <dd id="mobile_tip" style="display:none">
+                  <i></i>
+                </dd>
+              </dl>
+
+              <div class="title"><span class="secondTit"></span></div>
+              <dl class="clearfix">
+                <dt>Organization Name</dt>
+                <dd>
+                  <div class="form-group">
+                  <input class="form-control signTxt" id="india_user_company_name" name="company[name]" type="text" value="<%= params[:company_name] %>" >
+                  </div>
+                </dd>
+                <dd id="company_name_tip" style="display:none">
+                  <i></i>
+                </dd>
+              </dl>
+
+              <dl class="clearfix">
+                <dt>&nbsp;</dt>
+                <dd>
+                  <input type="submit" class="signBtn" value="Sign Up" id="registerBtn" />
+                </dd>
+              </dl>
+            </div>
+          </div>
+        <% end %>
+      <%= hidden_field_tag 'ajax_email', edit_user_registration_path %>
+      <%= hidden_field_tag 'error', params[:error] %>
+      <div class="regRight">
+        <p>If you have problem signing up for iChemical, please feel free to contact our customer service for assistance.</p>
+
+        <div class="email">
+          <i></i>
+          <a href="mailto:support@ichemical.in?subject=feedback">support@ichemical.in</a>
+        </div>
+
+        <p class="member">Already an iChemical member?</p>
+        <%= link_to 'Login', new_user_session_path, class: "loginBtn" %>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="regFoot">
+  <div class="wrap">
+    <div class="foot">
+      <div class="fl">
+        <dl>
+          <dd><a href="#">About Us</a><i class="line"></i></dd>
+          <dd><a href="#">Term</a><i class="line"></i></dd>
+          <dd><a href="#">Contact Us </a></dd>
+          <dt>iChemical.in @2015</dt>
+        </dl>
+      </div>
+      <div class="fr">
+        <dl>
+          <dt>Follow Us:</dt>
+          <dd><a href="#" class="facebook"></a></dd>
+          <dd><a href="#" class="twitter"></a></dd>
+          <dd><a href="#" class="youtube"></a></dd>
+          <dd><a href="#" class="linkedIn"></a></dd>
+          <dd><a href="#" class="gplus"></a></dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<% end %>
+
+<script type="text/javascript" charset="utf-8">
+//表单校验
+
+function find_email(){
+    var company_info=$("#india_user_email").val();
+    $.ajax({
+      url:'/check_email',
+      type:'post',
+      cache:false,
+      data:'company_info='+company_info+'&nocache='+Math.random(),
+      dataType:"json",
+      success:function(msg){
+        if(msg==null){
+          $("#li_1").hide();
+          $("#email_tip").hide();
+       }else{
+          $("#li_1").show();
+          $("#email_tip").show();
+          $("#india_user_email").css(".border-color: #dd4b39");
+        }
+      }
+    })
+  }
+
+$(document).ready(function(){
+    var errorVal = $("#error").val();
+    if(errorVal.length>0){
+        $("#india_user_email").validationEngine('showPrompt', errorVal, 'error');
+    }
+
+    var validation = $('#new_user').validate({
+        onfocusout: false,
+        errorPlacement: function(error, element) {
+            error.appendTo( element.closest("div") );
+        },
+        highlight: function(element) {
+
+            $(element).closest("div.form-group").addClass("has-error f_error");
+        },
+        unhighlight: function(element) {
+            $(element).closest("div.form-group").removeClass("has-error f_error");
+        },
+        rules: {
+            'user[first_name]': 'required',
+            'user[email]': {required:true,email:true},
+            'user[password]':{required:true,minlength:8},
+            'user[password_confirmation]':{required:true,minlength:8,equalTo:'#india_user_password'},
+            'user[mobile]' :'required',
+            'company[name]' :'required'
+
+        }, messages: {
+            'user[first_name]': {required:"First Name is required"},
+            'user[email]': {required:"Invalid Email Address"},
+            'user[password]':{required:"Password is too simple, please use at least 8 characters. "},
+            'user[password_confirmation]':{required:"Password is not the same"},
+            'user[mobile]' :{required:"Personal Contact is required "},
+            'company[name]': {required:"Company Name is required"}
+
+        },
+        ignore				: ':hidden'
+    });
+    console.log("hello")
+
+ });
+
+
+</script>

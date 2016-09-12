@@ -1,0 +1,111 @@
+<div class="loginWrap">
+  <div class="loginLogo">
+    <%= link_to root_path do  %>
+      <div class="logo">
+      </div>
+    <% end %>
+  </div>
+  <div class="passwordHelp">
+    <h3>Password Retrieval</h3>
+    <div class="forgot">
+      <p class="title">Forgot Password?</p>
+      <p>Enter your email address and we’ll email you instructions to reset your password.</p>
+      <input type="text" class="txt" placeholder="Email Address Reset Password" id="user_email" />
+      <input type="button" class="btn" value="SEND" onclick="restart_password()" />
+    </div>
+    <div class="forgot exp">
+      <p class="title">Forgot Email Address?</p>
+      <p>Please leave the info you used to register on iChemical,Cell Phone Number.</p>
+      <input type="text" class="txt" placeholder="Retrieve Email address" id="company_info" />
+      <input type="button" class="btn"  value="SEND" onclick="find_email()" />
+    </div>
+    <div id='li_1' style='margin-top:7px;display:none'>
+    <span>
+      <h3>You Email is:</h3>
+    </span>
+    </div>
+    <div id='li_2' style='display:none'>
+      <textarea id='show_result' style="width:580px;height:86px;border:1px solid #d3d3d3;border-radius:4px;"></textarea>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  function restart_password(){
+    var email = $.trim($("#user_email").val());
+
+    if('' == email) {
+       layer.alert("Email used to register", { icon: 3, title: 'Warning' }, function() {
+         layer.closeAll();
+       })
+       return false
+    }
+    
+    var layer_index = layer.load("Searching…");
+    $.ajax({
+      url: '/find_password',
+      type: 'post',
+      cache: false,
+      data: 'email='+email+'&nocache='+Math.random(),
+      dataType:"json",
+      success:function(msg){
+        layer.close(layer_index)
+        if(msg.success){
+          layer.alert(msg.message, {icon: 1, title:'Notice'},function(){
+        layer.closeAll();
+       })
+        }else{
+          layer.alert(msg.message, {icon: 0, title:'Notice'},function(){
+        layer.closeAll();
+       })
+        }
+      }
+    })
+  }
+
+  function find_email(){
+    $("#show_result").val('');
+    var company_info=$.trim($("#company_info").val())
+    if(company_info==''){
+       layer.alert("Cell phone number used to register",{icon: 3, title:'Warning'},function(){
+        layer.closeAll();
+       })
+       return false
+    }
+
+    if(company_info.length<4){
+       layer.alert("Need to input at least 3 characters",{icon: 3, title:'Warning'},function(){
+        layer.closeAll();
+       })
+       return false
+    }
+
+    var layer_index=layer.load("Searching…")
+    $.ajax({
+      url:'/find_email',
+      type:'post',
+      cache:false,
+      data:'company_info='+company_info+'&nocache='+Math.random(),
+      dataType:"json",
+      success:function(msg){
+        layer.close(layer_index)
+        if(msg==null){
+          $("#li_1").hide();
+          $("#li_2").hide();
+          layer.alert("No email found.",{icon: 3, title:'Warning'},function(){
+        layer.closeAll();
+       })
+        }else{
+          $("#li_1").show();
+          $("#li_2").show();
+          var emails=""
+          for(i=0;i<msg.length;i++){
+             emails=emails+msg[i].email+"; "
+          }
+          $("#show_result").val(emails)
+        }
+      }
+    })
+  }
+</script>>
