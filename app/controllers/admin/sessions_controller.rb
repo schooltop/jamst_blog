@@ -1,6 +1,6 @@
 class Admin::SessionsController < Devise::SessionsController
  # before_action :configure_sign_in_params, only: [:create]
-  layout "admin_login"
+  #layout "admin_login"
   # GET /resource/sign_in
   def new
     super
@@ -31,20 +31,7 @@ class Admin::SessionsController < Devise::SessionsController
 
   # 登录后不同角色跳转
   def login_jump_url
-    cu = current_employee
-    if cu.is?("admin")
-      admin_employees_path
-    elsif cu.is?(["dealer","dealer_team_leader","dealer_director","dealer_manager"])
-      dealer_inquiry_list_admin_dealer_managements_path
-    elsif cu.is?(["bd","bd_team_leader","bd_director","bd_manager"])
-      inquiry_list_admin_bd_managements_path
-    elsif cu.is?("purchase")
-      purchasing_orders_admin_orders_path
-    elsif cu.is?(["customer_service","customer_team_leader","customer_director","customer_manager"])
-      cs_inquiry_list_admin_cs_managements_path
-    elsif cu.is?("financial")
-      accounts_receivable_admin_financials_path
-    end
+    admin_employees_path
   end
 
   # protected
