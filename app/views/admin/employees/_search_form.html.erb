@@ -1,0 +1,13 @@
+<% if @q.present? %>
+  <div class="ui blue segment">
+    <%= simple_form_for @q,  url: admin_hr_employees_path, method: :get, wrapper: 'semantic_search_form' do |f| %>
+      <div class="ui five column grid">
+        <%= f.input :email, placeholder: '邮箱' %>
+        <%= f.input :name, placeholder: '姓名' %>
+        <div class="column">
+          <%= f.submit '搜索', class: 'ui primary button' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

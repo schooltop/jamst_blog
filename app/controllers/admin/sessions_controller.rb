@@ -14,7 +14,7 @@ class Admin::SessionsController < Devise::SessionsController
     # resource.ensure_private_token!
     respond_to do |format|
       #format.html { redirect_to after_sign_in_path_for(resource) }
-      current_employee.add_log("#{current_employee.email} Login At #{Time.now.format_date(:full)}",request.ip)
+      #current_employee.add_log("#{current_employee.email} Login At #{Time.now.format_date(:full)}",request.ip)
       format.html { redirect_to login_jump_url }
       format.json { render status: '201', json: resource.as_json(only: [:login, :email, :private_token]) }
     end
@@ -23,7 +23,7 @@ class Admin::SessionsController < Devise::SessionsController
   # DELETE /resource/sign_out
   def destroy
     Rails.cache.delete("current_employee_#{current_employee.id}".to_sym)
-    current_employee.add_log("#{current_employee.email} Sign out At #{Time.now.format_date(:full)}",request.ip)
+    #current_employee.add_log("#{current_employee.email} Sign out At #{Time.now.format_date(:full)}",request.ip)
     sign_out
     redirect_to admin_employees_path
     #super

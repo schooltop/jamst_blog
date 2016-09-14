@@ -1,0 +1,28 @@
+<tr id="<%= ajax_bar_element_id(employee) %>">
+  <td class="center aligned">
+    <span><%= employee.id%></span>
+  </td>
+  <td class="center aligned">
+    <%=  employee.email%>
+  </td>
+  <td class="center aligned">
+    <%= employee.name %>
+  </td>
+  <td class="center aligned">
+    <%= employee.mobile %>
+  </td>
+  <td class="center aligned">
+    <%#= employee.parent&.name %>
+  </td>
+  <td class="center aligned">
+    <%#= link_to_with_permissions edit_admin_hr_employee_path(employee), remote: true, data: {content: '修改', variation: 'inverted'}, class: 'ui blue icon button' do %>
+      <i class="edit icon"></i>
+    <%# end %>
+    <%#= link_to_with_permissions roles_admin_hr_employee_path(employee), data: {content: '分配角色', variation: 'inverted'}, class: 'ui green icon button' do %>
+      <i class="hand pointer icon"></i>
+    <% #end %>
+    <%#= link_to_with_permissions edit_parent_admin_hr_employee_path(employee), remote: true, data: {content: '分配上级', variation: 'inverted'}, class: 'ui olive icon button' do %>
+      <i class="share icon"></i>
+    <% #end %>
+  </td>
+</tr>
