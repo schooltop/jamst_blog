@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :blogs
   resources :articles
   resources :categories
   resources :tags
@@ -69,7 +70,7 @@ Rails.application.routes.draw do
   #   resources :posts, concerns: :toggleable
   #   resources :photos, concerns: :toggleable
 
-  root to: 'articles#index'
+  root to: 'blogs#index'
 
   # Example resource route within a namespace:
   #   namespace :admin do
