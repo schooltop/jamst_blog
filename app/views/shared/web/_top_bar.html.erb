@@ -1,0 +1,127 @@
+<div class='clearfix' id='topWrapper'>
+  <input id='min_login' type='hidden' value='false'>
+  <div class='topBar'>
+    <div class='topLeft'>
+      <% if current_user %>
+        <span>
+          欢迎您， <%= current_user.member_name %> &nbsp;
+          <a href="/user/sign_out" class="top_reg_btn" data-method="delete" rel="nofollow">登出</a>
+        </span>
+      <% else %>
+        <span>亲，欢迎来网化商城！请</span>&nbsp;
+        <a href="/user/sign_in" class="top_login_btn" style="color: white">登陆</a>
+        <a href="/user/sign_up" class="top_reg_btn">免费注册</a>
+      <% end %>
+    </div>
+    <div class='topRight'>
+      <a class='fast' href='#' onclick='release_inquiry(this)'>快速发布求购</a>
+      <span class='htr_line'></span>
+      <% if current_user %>
+        <a href='/my_whmall/buying/index' id='valid_login'>我的网化商城</a>
+      <% else %>
+        <a href='/user/sign_in' id='valid_login'>我的网化商城</a>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class='clearfix' id='headWrapper'>
+  <div class='topLogo'>
+    <a href='/'>
+      <img src='/assets/home_logo.png'>
+    </a>
+  </div>
+  <div class='topSearch'>
+    <form accept-charset="UTF-8" action="/search" class="form-search" id="frm_quick_search" method="get" style="border:none;">
+      <input class="searchTxt" id="quick_search_param" name="q" placeholder="请输入化学品的中文名，英文名或CAS号" type="text" onkeydown="javascript: if(event.keyCode==13) search_input('#frm_quick_search input');" />
+      <input class='searchBtn' onclick='search_input("#frm_quick_search input")' type='button' value='立即搜索'>
+      <a class='sfSearch' href='/products/structure_search.html'> 结构式搜索 </a>
+    </form>
+
+  </div>
+</div>
+<div id='navWrapper'>
+  <div class='navbar' style='position:relative;'>
+    <ul>
+      <li class='nav1'> <a href='/'>首页</a> </li>
+      <li> <a href='/look_raw_material/index.html'>找原料</a> </li>
+      <li> <a href='/selling_product/index.html'>卖产品</a> </li>
+      <li> <a href='/syntheticnew/draw_target_index.html'>查路线</a> </li>
+      <li> <a href='/trading_hall/index.html'>交易大厅</a> </li>
+      <li> <a href='/point_market/point_market_index' target='_blank'>积分兑换</a> </li>
+    </ul>
+    <div class='newIco' style='position:absolute; left:454px; top:-13px; width:47px; height:24px; background: url(../assets/banner/newIco.png) no-repeat;'></div>
+    <div class='hotline'>
+      <span class='hotTel'>服务热线：4008-123-147</span>
+    </div>
+  </div>
+</div>
+<script>
+  $('#load_sku_date_a').bind("click",function(){
+    $.layer({
+      type: 1,
+      title:  ['注册', 'background:#338F2F;color:#fff'] , //不显示默认标题栏
+      maxmin: false,
+      offset: ['', ''],
+      area: ['800px', '600px'],
+      //shade: [0], //不显示遮罩
+      shadeClose: false,//用来控制点击遮罩区域是否关闭层。若开启，设为true即可
+      shade: [0.5, '#000'], //控制遮罩 ,值分别是：[遮罩透明度, 遮罩颜色, layer1.8之前需在此处加true] ,如果不想显示遮罩，配置shade: [0]即可
+      closeBtn: [1, true],//closeBtn的值分别为: [关闭按钮的风格（支持0和1）, true],若不想显示关闭按钮，配置 closeBtn: false即可
+      time: 0,//自动关闭等待秒数，整数值。0表示不自动关闭，若3秒后自动关闭，time: 3即可
+      fix: true,//用于设定层是否不随滚动条而滚动，固定在可视区域。
+      bgcolor: '#fff', //如果不想设置任何颜色，设置空字符即可。但是对于type:0的对话框层而言，始终都是白色
+      fadeIn: 300,//用于控制层渐显弹出 值为毫秒数
+      shift: '',//用于控制动画弹出 左上(left-top),上(top), 右上(right-top),右下(right-bottom),下(bottom),左下(left-bottom),左('left')。
+      page: {url: '/look_raw_material/min_register'},
+      move:false,
+      border: [5, 0.5, '#338F2F'],
+      close:function(){
+      },
+      end: function(){
+      },
+      success: function(layero){
+
+      }
+    });
+  })
+
+  function clearForm(objE){//objE为form表单
+    $("#"+objE).find(':input').each(
+    function(){
+      switch(this.type){
+        case 'passsword':
+        case 'select-multiple':
+        case 'select-one':
+        case 'text':
+        case 'textarea':
+        $(this).val('');
+        break;
+        case 'checkbox':
+        case 'radio':
+        this.checked = false;
+      }
+    }
+    );
+  }
+
+
+  function quick_search(){
+    if ($('#quick_search_param').val()==''||$.trim($('#quick_search_param').val())==''){
+      document.getElementById('frm_quick_search').action='/product/products_1.html'
+      }else{
+      document.getElementById('frm_quick_search').action='/product/'+$('#quick_search_param').val()+'/1.html'
+    }
+    $('#frm_quick_search').submit()
+  }
+  function search_input(selector){
+    var term =  $(selector).val();
+    if(term){
+      search(term);
+    }
+  }
+
+  function search(term){
+    window.location.href = '/search?q=' + term;
+  }
+  //]]>
+</script>

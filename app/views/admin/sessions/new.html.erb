@@ -1,0 +1,40 @@
+
+<div class="login-box">
+  <div class="login-logo">
+    <a href="javascript:void(0)"><b>Admin</b> IChemical</a>
+  </div>
+  <div class="login-box-body">
+    <p class="login-box-msg">Sign in to start your session</p>
+
+    <% if flash.now[:alert].present?  %>
+      <%= content_tag :div, flash.now[:alert], :class => "warning", :id => "Message" ,:style=>"color:#f39c12;" %>
+    <% end %>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "" }) do |f| %>
+      <div class="form-group has-feedback">
+        <%= f.text_field :email, type: :email, class: "form-control loginTxt", id: "india_user_email" %>
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <%= f.text_field :password, type: :password, class: "form-control loginTxt", id: "india_user_password" %>
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="row">
+        <div class="col-xs-8">
+          <div class="checkbox icheck" style="margin-left:20px">
+            <label>
+              <%= f.check_box :remember_me, id: "india_user_remember_me" %> Remember Me
+            </label>
+          </div>
+        </div>
+        <div class="col-xs-4">
+          <!--<button type="submit" class="btn btn-primary btn-block btn-flat" onclick="login()">LOGIN</button>-->
+          <input class="btn btn-primary btn-block btn-flat" name="commit" type="submit" value="LOGIN">
+        </div>
+      </div>
+    <% end %>
+    <%= link_to "Forgot password?", forget_password_admin_employees_path , class: "fr" %>
+  </div>
+</div>
+
+

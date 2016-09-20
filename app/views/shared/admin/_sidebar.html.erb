@@ -1,0 +1,213 @@
+<div class="ui vertical fluid menu" id="verticalMenu">
+  <ul>
+    <li>
+    <a class="item">
+      <i class="unordered list icon"></i>
+      <span class="main_menu">代销寄售管理</span>
+      <i class="right dropdown icon"></i>
+    </a>
+    <div class="menu content child active">
+      <%= link_to_with_permissions admin_inventory_warehouses_path, class: 'item', active_class: 'actives' do %>
+        <i class="left bullseye icon"></i>
+        <span>仓库列表</span>
+      <% end %>
+      <%= link_to_with_permissions admin_inventory_inventories_path, class: 'item', active_class: 'actives' do %>
+        <i class="left bullseye icon"></i>
+        <span>库存管理</span>
+      <% end %>
+      <%= link_to_with_permissions admin_inventory_adjustments_path, class: 'item', active_class: 'actives' do %>
+        <i class="left bullseye icon"></i>
+        <span>库存盘点历史</span>
+      <% end %>
+      <%= link_to_with_permissions admin_inventory_chemicals_path, class: 'item', active_class: 'actives' do %>
+        <i class="left bullseye icon"></i>
+        <span>代销寄售产品</span>
+      <% end %>
+      <%= link_to_with_permissions admin_inventory_orders_path, class: 'item', active_class: 'actives' do %>
+        <i class="left bullseye icon"></i>
+        <span>采购订单</span>
+      <% end %>
+      <%= link_to_with_permissions admin_inventory_invoices_path, class: 'item', active_class: 'actives' do %>
+        <i class="left bullseye icon"></i>
+        <span>发票跟踪</span>
+      <% end %>
+      <%= link_to_with_permissions admin_inventory_deliveries_path, class: 'item', active_class: 'actives' do %>
+        <i class="left bullseye icon"></i>
+        <span>订单收货</span>
+      <% end %>
+      <%= link_to_with_permissions admin_inventory_checkins_path, class: 'item', active_class: 'actives' do %>
+        <i class="left bullseye icon"></i>
+        <span>入库检测</span>
+      <% end %>
+      <!--<%#= link_to_with_permissions admin_inventory_prices_path, class: 'item', active_class: 'actives' do %>
+        <i class="left bullseye icon"></i>
+        <span>库存报价</span>
+      <%# end %>-->
+      <!--<%= link_to_with_permissions '#', class: 'item', active_class: 'actives' do %>-->
+        <!--<i class="left bullseye icon"></i>-->
+        <!--<span>库存盘点</span>-->
+        <!--<% end %>-->
+      <!--<%= link_to_with_permissions({action: 'index'}, class: 'item') do %>-->
+        <!--<i class="left bullseye icon"></i>-->
+        <!--<span>报废下架</span>-->
+        <!--<% end %>-->
+      
+      <%= link_to_with_permissions admin_inventory_unconfirmed_orders_path, class: 'item', active_class: 'actives' do %>
+        <i class="left bullseye icon"></i>
+        <span>未确认订单</span>
+      <% end %>
+      <%= link_to_with_permissions admin_inventory_customer_orders_path, class: 'item', active_class: 'actives' do %>
+          <i class="left bullseye icon"></i>
+          <span>待发货订单</span>
+      <% end %>
+      <%= link_to_with_permissions admin_inventory_shipments_path, class: 'item', active_class: 'actives' do %>
+        <i class="left bullseye icon"></i>
+        <span>订单出货</span>
+      <% end %>
+      <%= link_to_with_permissions admin_inventory_returns_path, class: 'item', active_class: 'actives' do %>
+        <i class="left bullseye icon"></i>
+        <span>订单退货</span>
+      <% end %>
+      <%= link_to_with_permissions admin_chemical_additions_path, class: 'item', active_class: 'actives' do %>
+        <i class="left bullseye icon"></i>
+        <span>化学品管理</span>
+      <% end %>
+    </div>
+    </li>
+
+    <li>
+    <a class="item">
+      <i class="external icon"></i>
+      <span class="main_menu">代销直发管理</span>
+      <i class="right dropdown icon"></i>
+    </a>
+    <div class="menu content child active">
+      <%= link_to_with_permissions admin_direct_ship_rules_path, class: 'item', active_class: 'actives' do %>
+        <i class="left bullseye icon"></i>
+        <span>供应商成本价合同</span>
+      <% end %>
+      <%= link_to_with_permissions admin_direct_ship_chemicals_path, class: 'item', active_class: 'actives' do %>
+        <i class="left bullseye icon"></i>
+        <span>直发产品报价</span>
+      <% end %>
+      <%= link_to_with_permissions admin_direct_ship_orders_path, class: 'item', active_class: 'actives' do %>
+        <i class="left bullseye icon"></i>
+        <span>所有直发订单</span>
+      <% end %>
+      <!-- <%#= link_to_with_permissions admin_direct_ship_months_path, class: 'item', active_class: 'actives' do %>
+        <i class="left bullseye icon"></i>
+        <span>直发月结</span>
+      <%# end %> -->
+    </div>
+    </li>
+
+    <li>
+    <a class="item">
+      <i class="yen icon"></i>
+      <span class="main_menu">财务管理</span>
+      <i class="right dropdown icon"></i>
+    </a>
+    <div class="menu content child active"  >
+      <%= link_to_with_permissions admin_finance_payments_path, class: 'item', active_class: 'actives' do %>
+        <i class="left bullseye icon"></i>
+        <span>应付账款</span>
+      <% end %>
+      <%= link_to_with_permissions admin_finance_invoice_details_path, class: 'item', active_class: 'actives' do %>
+        <i class="left bullseye icon"></i>
+        <span>登记发票</span>
+      <% end %>
+      <%= link_to_with_permissions admin_finance_invoices_path, class: 'item', active_class: 'actives' do %>
+        <i class="left bullseye icon"></i>
+        <span>发票管理</span>
+      <% end %>
+    </div>
+    </li>
+    <li>
+      <a class="item">
+        <i class="users icon"></i>
+        <span class="main_menu">人事权限管理</span>
+        <i class="right dropdown icon"></i>
+      </a>
+      <div class="menu content child active">
+        <%= link_to_with_permissions admin_hr_departments_path, class: 'item', active_class: 'actives' do %>
+          <i class="left bullseye icon"></i>
+          <span>部门管理</span>
+        <% end %>
+        <%= link_to_with_permissions admin_hr_employees_path, class: 'item', active_class: 'actives' do %>
+          <i class="left bullseye icon"></i>
+          <span>员工管理</span>
+        <% end %>
+        <%= link_to_with_permissions admin_hr_wh_employee_roles_path, class: 'item', active_class: 'actives' do %>
+          <i class="left bullseye icon"></i>
+          <span>角色管理</span>
+        <% end %>
+      </div>
+    </li>
+    <!--<li>-->
+      <!--<a class="item">-->
+        <!--<i class="law icon"></i>-->
+        <!--<span class="main_menu">化合物管理</span>-->
+        <!--<i class="right dropdown icon"></i>-->
+      <!--</a>-->
+      <!--<div class="menu content child active">-->
+        <!--<%= link_to_with_permissions admin_chemical_chemicals_path, class: 'item', active_class: 'actives' do %>-->
+            <!--<i class="left bullseye icon"></i>-->
+            <!--<span>化合物维护</span>-->
+        <!--<% end %>-->
+        <!--<%= link_to_with_permissions admin_chemical_invalid_chemicals_path, class: 'item', active_class: 'actives' do %>-->
+            <!--<i class="left bullseye icon"></i>-->
+            <!--<span>黑名单</span>-->
+        <!--<% end %>-->
+        <!--<%= link_to_with_permissions admin_chemical_big_products_path, class: 'item', active_class: 'actives' do %>-->
+            <!--<i class="left bullseye icon"></i>-->
+            <!--<span>监管产品</span>-->
+        <!--<% end %>-->
+        <!--<%= link_to_with_permissions admin_chemical_vendor_products_path, class: 'item', active_class: 'actives' do %>-->
+            <!--<i class="left bullseye icon"></i>-->
+            <!--<span>供应产品</span>-->
+        <!--<% end %>-->
+      <!--</div>-->
+    <!--</li>-->
+    <li>
+      <a class="item">
+        <i class="forumbee icon"></i>
+        <span class="main_menu">活动管理</span>
+        <i class="right dropdown icon"></i>
+      </a>
+      <div class="menu content child active">
+        <%= link_to_with_permissions admin_huodong_coupons_path, class: 'item', active_class: 'actives' do %>
+            <i class="left bullseye icon"></i>
+            <span>优惠劵</span>
+        <% end %>
+
+        <%= link_to_with_permissions admin_huodong_activities_path, class: 'item', active_class: 'actives' do %>
+          <i class="left bullseye icon"></i>
+          <span>活动列表</span>
+        <% end %>
+
+        <%= link_to_with_permissions admin_huodong_promotions_path, class: 'item', active_class: 'actives' do %>
+          <i class="left bullseye icon"></i>
+          <span>活动产品</span>
+        <% end %>
+      </div>
+    </li>
+
+    <li>
+      <a class="item">
+        <i class="configure icon"></i>
+        <span class="main_menu">系统管理</span>
+        <i class="right dropdown icon"></i>
+      </a>
+      <div class="menu content child active">
+        <%= link_to_with_permissions admin_system_logs_path, class: 'item', active_class: 'actives' do %>
+          <i class="left bullseye icon"></i>
+          <span>日志列表</span>
+        <% end %>
+        <%= link_to_with_permissions admin_system_lookups_path, class: 'item', active_class: 'actives' do %>
+          <i class="left bullseye icon"></i>
+          <span>设置列表</span>
+        <% end %>
+      </div>
+    </li>
+  </ul>
+</div>

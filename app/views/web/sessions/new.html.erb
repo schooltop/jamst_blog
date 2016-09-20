@@ -1,0 +1,74 @@
+<body class="loginBg">
+<div class="loginWrap">
+  <div class="loginLogo">
+    <a class="logo" href="/"></a>
+    <h2>Login</h2>
+  </div>
+  <div class="loginMain clearfix">
+    <div class="loginLeft fl"></div>
+    <div class="loginRight fr">
+      <div class="errorExplanation_login" style="display:none">
+        <ul>
+          <li id="errorExplanation_tip"></li>
+        </ul>
+      </div>  
+
+      <% if flash.now[:alert].present?  %>
+          <%= content_tag :div, flash.now[:alert], :class => "warning", :id => "Message" ,:style=>"color:#f39c12;" %>
+      <% end %>
+
+
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "" }) do |f| %>
+        <dl>
+          <dt>E-mail</dt>
+          <dd class="txt">
+            <%= f.text_field :email, type: :email, class: "form-control loginTxt", id: "india_user_email" %>
+            <i class="email"> </i>
+          </dd>
+        </dl>
+
+        <dl>
+          <dt>Password</dt>
+          <dd class="txt">
+            <%= f.text_field :password, type: :password, class: "form-control loginTxt", id: "india_user_password" %>
+            <i class="password"> </i>
+          </dd>
+        </dl>
+
+        <dl>
+          <dd>
+            <div class="remember fl">
+              <%= f.check_box :remember_me, id: "india_user_remember_me" %> <%= t("common.remember_me") %>
+            </div>
+
+            <%= link_to "Forgot password?", new_user_password_path, class: "fr" %>
+          </dd>
+        </dl>
+        <dl>
+          <dd>
+            <input class="loginBtn" name="commit" type="submit" value="LOGIN">
+          </dd>
+        </dl>
+        <% end %>
+
+    </div>
+  </div>
+  <div class="notMember">
+    Not a member? <%= link_to 'Sign up now', new_user_registration_path %>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function(){
+      //页面加载的时候设置第一屏高度
+      var boxHeight=$(window).height();
+      $('.loginBg').css("height", boxHeight);
+  });
+  $(window).resize(function(){
+      //页面改变大小的时候设置第一屏高度
+       var boxHeight=$(window).height();
+      $('.loginBg').css("height", boxHeight);
+  });
+</script>
+
+</body>

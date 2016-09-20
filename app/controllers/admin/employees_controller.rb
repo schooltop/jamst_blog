@@ -11,13 +11,13 @@ class Admin::EmployeesController < Admin::BaseController
   end
 
   def new
-    @html_title =  "New employee";
+    @html_title =  "New employee"
     @employee =  Employee.new
     render :layout => false
   end
 
   def edit
-    @html_title = "Edit employee";
+    @html_title = "Edit employee"
     @employee =  Employee.find(params[:id])
     render :layout => false
   end

@@ -1,0 +1,66 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>iChemical</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css"  href="../css/iChemical.css" />
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+</head>
+<body class="loginBg">
+  <div class="loginWrap">
+        <div class="loginLogo">
+            <div class="logo"></div>
+            <h2 style="font-size:1.5em;">Reset your password</h2>
+        </div>
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, :class=> "form-horizontal",:id=>"chage_pwd_form" }) do |f| %>
+        <%= f.hidden_field :reset_password_token %>
+        <div class="loginMain clearfix">
+          <div class="loginLeft fl"></div>
+            <div class="loginRight fr">
+              <dl>
+                  <dt>New password</dt>
+                    <dd class="txt"><input type="password" name="user[password]" class="form-control loginTxt" id="_my_account_security_settings_change_pwd_password" /><i class="password"></i></dd>
+                </dl>
+                <dl>
+                  <dt>Type it again</dt>
+                    <dd class="txt"><input type="password" name="user[password_confirmation]" class="form-control loginTxt" /><i class="password"></i></dd>
+                </dl>
+                <dl>
+                  <dd><input type="submit" class="loginBtn" value="Reset Password" /></dd>
+                </dl>
+            </div>
+        </div>
+        <% end %>
+    </div>
+</body>
+</html>
+
+
+<script>
+  $(function(){
+    $('#chage_pwd_form').validate({
+      onfocusout: false,
+      errorPlacement: function(error, element) {
+        error.appendTo( element.closest("dl") );
+      },
+      highlight: function(element) {
+
+        $(element).closest("dl.form-group").addClass("has-error f_error");
+      },
+      unhighlight: function(element) {
+        $(element).closest("dl.form-group").removeClass("has-error f_error");
+      },
+      rules: {
+        'user[password]': {required: true, minlength: 8},
+        'user[password_confirmation]': {required: true, minlength: 8, equalTo: '#_my_account_security_settings_change_pwd_password'}
+
+      }, messages: {
+        'user[password]': {required: "Password is too simple, please use at least 8 characters. "},
+        'user[password_confirmation]': {required: "Password is not the same"}
+      },
+      ignore        : ':hidden'
+    });
+
+  });
+
+</script>
