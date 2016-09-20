@@ -21,7 +21,7 @@
 .byebug_history
 
 public/images
-public/assets
+
 
 config/database.yml
 
