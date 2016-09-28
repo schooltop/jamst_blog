@@ -66,6 +66,7 @@ gem 'rufus-scheduler'
 #gem 'whenever', :require => false
 # 文件上传
 gem 'carrierwave'
+gem 'remotipart', '~> 1.2'
 # 二维码
 # gem 'barby'
 # SEO优化
