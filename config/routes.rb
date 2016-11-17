@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :tags
   namespace :admin do
+    resources :users
     resources :employees do
       collection do
         get 'forget_password'
@@ -16,11 +17,7 @@ Rails.application.routes.draw do
   devise_for :employees, path: "admin", path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', sign_up: 'cmon_let_me_in' }, controllers: { sessions: "admin/sessions", passwords: "admin/passwords"}
   devise_for :users, controllers: { sessions: "web/sessions", registrations: "web/registrations", passwords: "web/passwords" }
   devise_scope :user do
-     post "/find_password" =>"web/passwords#get_password"
-     post "/find_email" =>"web/passwords#find_email"
-     post "/check_email" =>"web/passwords#check_email"
-     get "/edit_password" =>"web/passwords#edit"
-     post "/update_password" =>"web/passwords#update"
+      
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
