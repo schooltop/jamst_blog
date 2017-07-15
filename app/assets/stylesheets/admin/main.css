@@ -189,8 +189,12 @@ body {
     padding: 0;
 }
 
-.close_menu .active {
+/*.close_menu .active {
     position: relative;
+}*/
+
+.color_2185D0{
+    color: #2185D0;
 }
 
 #verticalMenu .actives {
@@ -1071,4 +1075,58 @@ body {
 }
 .ui.secondary.menu .dropdown.item>.menu, .ui.text.menu .dropdown.item>.menu{
     margin-top: 0;
+}
+
+
+
+.ui.table_btn{
+       padding: 8px 15px 8px 15px;
+       margin-top: -5px;
+       margin-bottom: -5px;
+   }
+
+/*用户记录*/
+.ui.feed>.event {
+    padding: 0;
+}
+i.message_icon{
+    width: 33px !important;
+    height: 33px;
+    background-color: #2185D0 !important;
+    color: #fff !important;
+    text-align: center;
+    line-height: 22px;
+    border-radius: 50%;    position: absolute;
+    z-index: 22;
+}
+.message_icon2{
+    width: 46px !important;
+    height: 46px;
+    background-color: #FBBD08 !important;
+    color: #FFF !important;
+    text-align: center;
+    line-height: 46px;
+    border-radius: 50%;    position: absolute;
+    z-index: 22;
+    margin-left: -6px;
+}
+.ui.feed>.event>.label {
+    position: relative;
+}
+.ui.feed>.event>.label:after {
+    content: "";
+    width: 3px;
+    background-color: #f5f5f5;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 16px;
+}
+.ui.feed>.event:last-child>.content {
+    padding-bottom: 14px;
+}
+.ui.feed > .event > .content .summary {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
 }

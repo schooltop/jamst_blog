@@ -1,101 +1,106 @@
 source 'https://rubygems.org'
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
+  "https://github.com/#{repo_name}.git"
+end
+# source 'https://gems.ruby-china.org'
 
+gem 'rails', '>= 5.0.0.rc2', '< 5.1'
+gem 'puma', '3.6.2'
+gem 'jbuilder', '~> 2.5'
+gem 'bcrypt'
+gem 'sidekiq'
+gem 'rake'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.0.0.rc2'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-gem "non-stupid-digest-assets"
-# Use Uglifier as compressor for JavaScript assets
-#gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
-#gem 'coffee-rails', '~> 4.1.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
+# Assets
+gem 'sass-rails', github: 'rails/sass-rails'
+gem 'sprockets', '4.0.0.beta4'
+gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+# gem 'rails-ujs'
+gem 'asset_sync', github: 'whmall/asset_sync'
+gem 'non-stupid-digest-assets'
 gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# 服务器
-gem 'passenger'
+# Login & Authority
+gem 'devise', git: 'https://github.com/plataformatec/devise.git'
+gem 'cancancan'
+gem 'rolify'
 
 # Store
 gem 'mysql2'
-# gem 'hiredis'
-# gem 'redis'
-# gem 'redis-objects'
-# gem 'redis-namespace'
+gem 'mongo'
+gem 'hiredis'
+gem 'redis'
+gem 'redis-objects'
+gem 'redis-namespace'
+gem 'dalli'
 
-# Utils
-# gem 'sidekiq'
-gem 'jwt'
+
+# Search
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+
+#Third Part
 gem 'httparty'
+gem 'jwt'
 
-# Third Part
-gem 'kaminari', github: 'amatsuda/kaminari'
+gem 'meta-tags'
 gem 'simple_form'
-gem 'default_form', github: 'qinmingyuan/default_form', tag: 'v1.3'
-gem 'default_where', github: 'qinmingyuan/default_where', tag: 'v2.0.3'
-# 权限控制
-gem 'devise'#, git: 'https://github.com/plataformatec/devise.git'
-gem 'cancancan'
-gem 'rolify'
-# 全文检索
-# gem 'elasticsearch'
-# gem 'elasticsearch-model'
-# gem 'elasticsearch-rails'
-gem 'spreadsheet'
-gem 'roo', require: false
-# gem 'axlsx', require: false
-# 生成pdf
-# gem 'prawn'
-# gem 'prawn-table'
-
-#gem 'bootstrap-sass', '~> 3.3.6'
-#gem "cells-rails"
-# 定时任务
-gem 'rufus-scheduler'
-#gem 'whenever', :require => false
-# 文件上传
 gem 'carrierwave'
 gem 'remotipart', '~> 1.2'
-# 二维码
-# gem 'barby'
-# SEO优化
-# gem 'meta-tags'
-# 图片mongo保存
-# gem 'mongo'
-# gem 'asset_sync'
-# 在线支付
-# gem 'alipay', '~> 0.12.0'
-# gem 'rqrcode'
-# gem 'wx_pay'
+gem 'sitemap_generator'
+gem 'spreadsheet'
+gem 'roo', require: false, github: 'whmall/roo'
+gem 'whenever', :require => false
+gem 'kaminari', github: 'amatsuda/kaminari'
+gem 'default_where', github: 'whmall/default_where'
+gem 'csv-importer', github: 'xor3/csv-importer'
+gem 'roo-xls', github: 'roo-rb/roo-xls'
+gem 'cocoon'
+gem 'savon'
+gem 'seventeen_mon'
 
+# Engines
+gem 'the_notify', github: 'whmall/the_notify', tag: 'v0.7.1'
+#gem 'rails_log', github: 'qinmingyuan/rails_log', tag: 'v2.0'
+gem 'rails_com', github: 'qinmingyuan/rails_com', tag: 'v0.7.3'  # 通用的helper，model等方法
+gem 'default_form', github: 'qinmingyuan/default_form', tag: 'v2.4'
+
+#gem 'default_form', path: '~/work/default_form'
+#gem 'the_notify', path: '~/work/the_notify'
+#gem 'rails_com', path: '~/work/engine/rails_com'
+#gem 'rails_log', path: '~/work/engine/rails_log'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  gem 'factory_girl'
+  gem 'factory_girl_rails'
   gem 'pry-rails'
+  gem 'database_cleaner'
+  gem 'byebug', platform: :mri
+  gem 'pry-byebug'
+  gem 'ruby-progressbar'
+  gem 'awesome_print'
 end
 
-# 部署
 group :development do
-  gem 'mina' # 暂时先用mina
-end
-
-group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'listen', '~> 3.0.5'
   gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'web-console'
+  gem 'mina', '1.0.6'
+  gem 'mina-whenever'
 end
 
+gem 'prawn'
+gem 'prawn-table'
+gem 'barby'
+
+
+gem 'wechat'
+gem 'wx_pay'
+gem 'omniauth-wechat-oauth2'
+gem 'rqrcode'
+gem 'qiniu'
+gem 'alipay', '~> 0.12.0'
+gem 'psych', '2.2.2'

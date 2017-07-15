@@ -1,0 +1,24 @@
+<div class="headWrapper2">
+  <div class="container">
+    <a href="/" class="logo2">
+      <img src="/assets/website/logo.png" width="180px;" height="100px;">
+      <span>jamst blog</span>
+    </a>
+    <div class="main_menu">
+      <ul>
+        <li><a href="<%#= about_us_path %>" <% if @bar_type == 'bar_one' %> class="active" <% else %>  target="_blank" <% end %> >关于我</a></li>
+
+        <li class="J_head_menu"><a href="<%#= media_reports_path %>" <% if @bar_type == 'bar_two' %> class="active" <% end %> >创作</a>
+          <div class="headWrapper2_bj" <% if  @bar_type == 'bar_two'  %> style='display: block;' <% end %> ></div>
+          <ul class="second_menu" <% if  @bar_type == 'bar_two' %> style='display: block;margin-left:-35px' <% else %> style="margin-left:-35px" <% end %> >
+            <li><a href="<%= blogs_path %>" <% if  @second_menu_type == 'news' %>  class="active2" <% end %> >视频</a></li>
+            <li><a href="<%#= announcement_media_reports_path %>"  <% if  @second_menu_type == 'affiche' %>  class="active2" <% end %> >音乐</a></li>
+            <li><a href="<%#= announcement_media_reports_path %>"  <% if  @second_menu_type == 'affiche' %>  class="active2" <% end %> >文学</a></li>
+          </ul>
+        </li>
+        <li><a href="<%#= partner_about_us_path %>" <% if @bar_type == 'bar_four' %> class="active" <% end %>>技术</a></li>
+        <li><a href="<%#= contact_us_about_us_path %>" <% if @bar_type == 'bar_five' %> class="active" <% end %> >联系我</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

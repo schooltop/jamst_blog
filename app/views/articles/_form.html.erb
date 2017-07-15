@@ -1,5 +1,5 @@
 
-<%= form_for @article, :html => { :multipart => true }, :remote => true do |f| %>
+<%= form_for @article, :html => { :multipart => true } do |f| %>
   <div class="field">
     <%= file_field_tag "draft_img", id: 'draft_img' %>
   </div>
@@ -7,7 +7,7 @@
   <div class="control-group optional form-group field" style="margin-top: 10px" >
 	  <%= f.label :category, 'Category', class: 'password optional control-label' %>
 	  <div class="controls">
-	    <%= f.select :category, options_for_select(category.all.collect { |p| [ p.name, p.id ] }, ''), {include_blank: true}, {class: 'form-control input-sm', style: 'width: 280px;' } %>
+	    <%= f.select :category_id, options_for_select(Category.all.collect { |p| [ p.name, p.id ] }, ''), {include_blank: true}, {class: 'form-control input-sm', style: 'width: 280px;' } %>
 	  </div>
   </div>
 
@@ -21,7 +21,7 @@
   <div class="control-group optional form-group field" style="margin-top: 10px" >
 	  <%= f.label :content, 'Content', class: 'password optional control-label' %>
 	  <div class="controls">
-	     <%= text_area_tag 'article[content]', @article.content, { rows: 4, class: 'form-control input-sm'  } %>
+	    <%= text_area_tag 'article[content]', @article.content, { rows: 400, class: 'form-control input-sm'  } %>
 	  </div>
   </div>
   
@@ -29,3 +29,23 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+
+<% content_for :scripts do %>
+	<%= javascript_include_tag 'wangEditor.min' %>
+    <%= stylesheet_link_tag    'wangEditor.min' %>
+	<script>
+		//富文本编辑器初始化
+		var editor = new wangEditor('article_content');
+		//图片上传配置
+		editor.config.uploadImgUrl = "/articles/upload_image";
+		editor.config.uploadImgFileName = "wang_editor_file"
+		editor.config.uploadHeaders = {
+		'Accept' : 'text/x-json',
+		'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+		};
+		editor.create();
+		editor.$editorContainer.css('z-index', 0);
+	</script>
+<% end %>
+

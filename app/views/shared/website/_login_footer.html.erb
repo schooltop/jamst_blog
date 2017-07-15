@@ -1,0 +1,16 @@
+<footer>
+  <div class="copyright">
+    <div class="left_content">
+      <ul class="link">
+        <li><a href="<%#= about_us_path %>" target="_blank">关于我</a>丨</li>
+        <li><a href="<%#= media_reports_path %>" target="_blank">文章</a>丨</li>
+        <li><a href="<%#= partner_about_us_path %>" target="_blank" >视频</a>丨</li>
+        <li><a href="<%#= contact_us_about_us_path %>" target="_blank">音乐</a></li>
+        <li>© 2017 schooltop.me 请和我交朋友 <%= qq_link "107422244" %></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<% content_for :scripts do %>
+    <%= javascript_include_tag 'website/js/page/common.js' %>
+<% end %>

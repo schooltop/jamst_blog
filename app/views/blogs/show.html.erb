@@ -1,0 +1,23 @@
+<div class="media_report_banner">
+  <div class="container">
+    <div class="menu">
+      <img src="/assets/website/banner/media_menu.png" alt="" />
+    </div>
+  </div>
+</div>
+<div class="media_details">
+  <div class="container">
+    <h2 class="title"><%= @news.title %></h2>
+    <div class="desc">
+      <p><span><%= show_db_time @news.created_at %></span>查看: <%= @news.view_count %></span></p>
+    </div>
+    <!-- 插入内容 -->
+    <div class="media_details_main">
+      <%= @news.content.html_safe  %>
+    </div>
+    <div class="media_details_paging">
+      <p>上一篇:<a href="<%= @_pre_obj.blank? ? "javascript:void(0)" : blog_path(@_pre_obj) %>"><%= @_pre_obj.blank? ? "无" : @_pre_obj.title %></a></p>
+      <p>下一篇:<a href="<%= @_next_obj.blank? ? "javascript:void(0)" : blog_path(@_next_obj) %>"><%= @_next_obj.blank? ? "无" : @_next_obj.title %></a></p>
+    </div>
+  </div>
+</div>

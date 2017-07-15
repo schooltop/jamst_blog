@@ -1,0 +1,25 @@
+<div class="topbar">
+  <div class="container">
+    <div class="topLeft">
+      <a href="/" class="home"><i></i>首页</a>
+
+      <% if current_user.blank? %>
+          <span id="topbar_greet">亲，欢迎来我的博客!</span>
+          <a href="<%= user_session_path %>" class="login">请登录</a>
+          <a href="<%= new_user_registration_path %>" class="register">免费注册</a>
+      <% else %>
+          <span id="topbar_greet"><%= current_user.name %>，欢迎来我的博客!</span>
+          <%= link_to destroy_user_session_path ,method: 'delete', class: 'login' do %>
+              登出
+          <% end %>
+      <% end %>
+    </div>
+    <div class="topRight">
+      <a href="<%#= my_whmall_home_index_path %>" class="vip">会员中心</a>
+      <a href="<%#= about_us_path %>" class="about_us" target="_blank"><img src="/assets/website/icons/about_us.jpg" alt="">关于我们</a>
+      <a href="#" class="weibo">
+        <img src="/assets/website/icons/weibo3.png" alt="">
+      </a>
+    </div>
+  </div>
+</div>

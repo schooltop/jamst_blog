@@ -187,9 +187,9 @@ body {
     padding: 0;
 }
 
-.close_menu .active {
+/*.close_menu .active {
     position: relative;
-}
+}*/
 
 #verticalMenu .actives {
     display: block;

@@ -1,0 +1,8 @@
+
+<!-- 底部 -->
+<footer>
+  <%= render '/shared/website/footer_link' %>
+</footer>
+<% content_for :scripts do %>
+    <%= javascript_include_tag 'website/js/page/common.js' %>
+<% end %>

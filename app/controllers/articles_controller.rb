@@ -51,6 +51,11 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def upload_image
+    attachment = Attachment.create(attachment_entity_type: "Article", path: params[:wang_editor_file], created_by: 1 )
+    render plain: attachment.path
+  end
+
   # DELETE /articles/1
   # DELETE /articles/1.json
   def destroy
@@ -69,6 +74,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.fetch(:article, {})
+      params.require(:article).permit(:category_id,:title,:content)
     end
 end

@@ -1,7 +1,7 @@
  /*
- * # Semantic UI - 2.2.1
- * https://github.com/Semantic-Org/Semantic-UI
- * http://www.semantic-ui.com/
+ * # assets UI - 2.2.1
+ * https://github.com/assets-Org/assets-UI
+ * http://www.assets-ui.com/
  *
  * Copyright 2014 Contributors
  * Released under the MIT license
@@ -9,8 +9,8 @@
  *
  */
 /*!
- * # Semantic UI 2.2.1 - Reset
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Reset
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -159,7 +159,7 @@ a:hover {
   outline: 0;
 }
 
-/* Text-level semantics
+/* Text-level assetss
    ========================================================================== */
 
 /**
@@ -495,8 +495,8 @@ th {
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Site
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Site
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -663,8 +663,8 @@ input::selection {
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Button
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Button
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -1726,7 +1726,7 @@ input::selection {
   position: relative;
   width: 0.3em;
   height: 2.57142857em;
-  z-index: 3;
+  /*z-index: 3;*/
 }
 
 .ui.buttons .or:before {
@@ -4618,8 +4618,8 @@ input::selection {
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Container
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Container
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -4779,8 +4779,8 @@ input::selection {
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Divider
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Divider
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -5046,8 +5046,8 @@ input::selection {
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Flag
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Flag
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -5078,7 +5078,7 @@ i.flag:not(.icon) {
 i.flag:not(.icon):before {
   display: inline-block;
   content: '';
-  background: url("/semantic/images/flags.png") no-repeat -108px -1976px;
+  background: url("/assets/images/flags.png") no-repeat -108px -1976px;
   width: 16px;
   height: 11px;
 }
@@ -6317,8 +6317,8 @@ i.flag.zimbabwe:before {
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Header
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Header
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -7138,8 +7138,8 @@ a.ui.inverted.grey.header:hover {
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Icon
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Icon
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -7153,8 +7153,8 @@ a.ui.inverted.grey.header:hover {
 
 @font-face {
   font-family: 'Icons';
-  src: url("/semantic/fonts/icons.eot");
-  src: url("/semantic/fonts/icons.eot?#iefix") format('embedded-opentype'), url("/semantic/fonts/icons.woff2") format('woff2'), url("/semantic/fonts/icons.woff") format('woff'), url("/semantic/fonts/icons.ttf") format('truetype'), url("/semantic/fonts/icons.svg#icons") format('svg');
+  src: url("/assets/fonts/icons.eot");
+  src: url("/assets/fonts/icons.eot?#iefix") format('embedded-opentype'), url("/assets/fonts/icons.woff2") format('woff2'), url("/assets/fonts/icons.woff") format('woff'), url("/assets/fonts/icons.ttf") format('truetype'), url("/assets/fonts/icons.svg#icons") format('svg');
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -7677,7 +7677,7 @@ i.icons .inverted.corner.icon {
 
 /*******************************
 
-Semantic-UI integration of font-awesome :
+assets-UI integration of font-awesome :
 
 ///class names are separated
 i.icon.circle => i.icon.circle
@@ -11190,8 +11190,8 @@ i.icon.fa:before {
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Image
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Image
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -11507,8 +11507,8 @@ img.ui.bordered.image {
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Input
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Input
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -12070,8 +12070,8 @@ img.ui.bordered.image {
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Label
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Label
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -13495,8 +13495,8 @@ a.ui.basic.label:hover {
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - List
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - List
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -14572,8 +14572,8 @@ ol.ui.horizontal.list li:before,
     User Variable Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Loader
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Loader
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -14950,8 +14950,8 @@ ol.ui.horizontal.list li:before,
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Rail
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Rail
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -15112,8 +15112,8 @@ ol.ui.horizontal.list li:before,
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Reveal
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Reveal
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -15417,8 +15417,8 @@ ol.ui.horizontal.list li:before,
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Segment
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Segment
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -16290,8 +16290,8 @@ ol.ui.horizontal.list li:before,
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Step
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Step
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -16974,8 +16974,8 @@ ol.ui.horizontal.list li:before,
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Breadcrumb
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Breadcrumb
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -17105,8 +17105,8 @@ ol.ui.horizontal.list li:before,
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Form
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Form
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -18264,8 +18264,8 @@ ol.ui.horizontal.list li:before,
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Grid
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Grid
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -20532,8 +20532,8 @@ ol.ui.horizontal.list li:before,
          Site Overrides
 *******************************/
 /*
- * # Semantic - Menu
- * http://github.com/semantic-org/semantic-ui/
+ * # assets - Menu
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Copyright 2015 Contributor
@@ -22778,8 +22778,8 @@ Floated Menu / Item
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Message
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Message
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -23319,8 +23319,8 @@ Floated Menu / Item
         Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Table
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Table
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -24583,8 +24583,8 @@ Floated Menu / Item
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Ad
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Ad
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Copyright 2013 Contributors
@@ -24872,8 +24872,8 @@ Floated Menu / Item
     User Variable Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Item
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Item
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -25946,8 +25946,8 @@ a.ui.card:hover,
     User Variable Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Comment
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Comment
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -26215,8 +26215,8 @@ a.ui.card:hover,
     User Variable Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Feed
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Feed
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -26527,8 +26527,8 @@ a.ui.card:hover,
     User Variable Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Item
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Item
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -27032,8 +27032,8 @@ a.ui.card:hover,
     User Variable Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Statistic
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Statistic
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -27670,8 +27670,8 @@ a.ui.card:hover,
     User Variable Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Accordion
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Accordion
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -27932,8 +27932,8 @@ a.ui.card:hover,
         User Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Checkbox
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Checkbox
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -28597,8 +28597,8 @@ a.ui.card:hover,
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Dimmer
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Dimmer
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -28803,8 +28803,8 @@ body.dimmable > .dimmer {
         User Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Dropdown
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Dropdown
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -30350,8 +30350,8 @@ select.ui.dropdown {
         User Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Video
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Video
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -30515,8 +30515,8 @@ select.ui.dropdown {
   padding-bottom: 42.85714286%;
 }
 /*!
- * # Semantic UI 2.2.1 - Modal
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Modal
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -31061,8 +31061,8 @@ select.ui.dropdown {
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Nag
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Nag
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -31206,8 +31206,8 @@ a.ui.nag {
         User Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Popup
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Popup
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -32017,8 +32017,8 @@ a.ui.nag {
         User Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Progress Bar
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Progress Bar
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -32598,8 +32598,8 @@ a.ui.nag {
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Rating
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Rating
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -32875,8 +32875,8 @@ a.ui.nag {
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Search
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Search
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -33309,8 +33309,8 @@ a.ui.nag {
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Shape
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Shape
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -33468,8 +33468,8 @@ a.ui.nag {
         User Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Sidebar
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Sidebar
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -34166,8 +34166,8 @@ html.ios body {
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Sticky
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Sticky
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -34240,8 +34240,8 @@ html.ios body {
          Site Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Tab
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Tab
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license
@@ -34327,8 +34327,8 @@ html.ios body {
         User Overrides
 *******************************/
 /*!
- * # Semantic UI 2.2.1 - Transition
- * http://github.com/semantic-org/semantic-ui/
+ * # assets UI 2.2.1 - Transition
+ * http://github.com/assets-org/assets-ui/
  *
  *
  * Released under the MIT license

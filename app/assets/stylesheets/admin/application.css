@@ -1,9 +1,11 @@
 /*
- *= require semantic
- *= require_tree ../semantic
- *= require admin/main
- *= require_self
- */
+*= require semantic
+*= require_tree ../semantic
+*= require admin/main
+*= require admin/model_color
+*= require admin/semantic_customize
+*= require_self
+*/
 
 .ui.active.modal > .selection.dropdown {
   z-index: 12;
@@ -32,3 +34,15 @@
 .ajax_bar_coupon_batch {
   width: 120px !important;
 }
+
+.bg-brown {
+  background-color: #A5673F;
+}
+.bg-gold {
+  background-color: #F0E68C;
+}
+.bg-blue {
+  background-color: #87CEFA;
+}
+
+

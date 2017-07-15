@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :blogs
-  resources :articles
+  resources :articles do
+    collection do
+      post :upload_image
+    end
+  end
   resources :categories
   resources :tags
   namespace :admin do
