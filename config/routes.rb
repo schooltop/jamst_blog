@@ -5,6 +5,11 @@ Rails.application.routes.draw do
       post :upload_image
     end
   end
+  resources :pictures do
+    collection do
+      post :upload_image
+    end
+  end
   resources :categories
   resources :tags
   namespace :admin do
