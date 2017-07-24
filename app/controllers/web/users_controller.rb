@@ -1,10 +1,6 @@
 module Web
   class UsersController < BaseController
-
-    def new
-      @user = User.new
-    end
-
+    
     def check_user
       @user = User.find_by(email: params[:email].strip)
       if @user.blank?

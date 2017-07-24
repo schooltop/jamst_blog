@@ -1,0 +1,39 @@
+<div class="am-u-md-4 am-u-sm-12 blog-sidebar">
+    <div class="blog-sidebar-widget blog-bor">
+        <h2 class="blog-text-center blog-title"><span>About ME</span></h2>
+        <%= image_tag "/assets/web/logo_a.png" ,:class=>"blog-entry-img"%>
+        <p>jamst</p>
+        <p>希望能和你交朋友-给我发邮件：107422244@qq.com</p>
+        <p>在工作中记录技术的点滴实现自我成长。分享生活的乐趣，培养兴趣爱好。</p>
+    </div>
+    <div class="blog-sidebar-widget blog-bor">
+        <h2 class="blog-text-center blog-title"><span>Contact ME</span></h2>
+        <p>
+            <a href=""><span class="am-icon-qq am-icon-fw am-primary blog-icon"></span></a>
+            <a href=""><span class="am-icon-github am-icon-fw blog-icon"></span></a>
+            <a href=""><span class="am-icon-weibo am-icon-fw blog-icon"></span></a>
+            <a href=""><span class="am-icon-reddit am-icon-fw blog-icon"></span></a>
+            <a href=""><span class="am-icon-weixin am-icon-fw blog-icon"></span></a>
+        </p>
+    </div>
+    <div class="blog-clear-margin blog-sidebar-widget blog-bor am-g ">
+        <h2 class="blog-title"><span>TAG cloud</span></h2>
+        <div class="am-u-sm-12 blog-clear-padding">
+        <a href="" class="blog-tag">amaze</a>
+        <a href="" class="blog-tag">妹纸 UI</a>
+        <a href="" class="blog-tag">HTML5</a>
+        <a href="" class="blog-tag">这是标签</a>
+        <a href="" class="blog-tag">Impossible</a>
+        <a href="" class="blog-tag">开源前端框架</a>
+        </div>
+    </div>
+    <div class="blog-sidebar-widget blog-bor">
+        <h2 class="blog-title"><span>么么哒</span></h2>
+        <ul class="am-list">
+          <% Article.view_count_top.each do |ac| %>
+            <li><a href="/blogs/<%= ac.id %>"><%= ac.title %></a></li>
+          <% end %>
+        </ul>
+    </div>
+  
+</div>

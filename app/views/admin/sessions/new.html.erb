@@ -1,40 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>jamst blog</title>
+  <%= stylesheet_link_tag 'admin/application' %>
+  <%= javascript_include_tag 'admin/application' %>
+  <%= csrf_meta_tags %>
+</head>
 
-<div class="login-box">
-  <div class="login-logo">
-    <a href="javascript:void(0)"><b>Admin</b> IChemical</a>
-  </div>
-  <div class="login-box-body">
-    <p class="login-box-msg">Sign in to start your session</p>
-
-    <% if flash.now[:alert].present?  %>
-      <%= content_tag :div, flash.now[:alert], :class => "warning", :id => "Message" ,:style=>"color:#f39c12;" %>
-    <% end %>
-
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "" }) do |f| %>
-      <div class="form-group has-feedback">
-        <%= f.text_field :email, type: :email, class: "form-control loginTxt", id: "india_user_email" %>
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-      </div>
-      <div class="form-group has-feedback">
-        <%= f.text_field :password, type: :password, class: "form-control loginTxt", id: "india_user_password" %>
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-      </div>
-      <div class="row">
-        <div class="col-xs-8">
-          <div class="checkbox icheck" style="margin-left:20px">
-            <label>
-              <%= f.check_box :remember_me, id: "india_user_remember_me" %> Remember Me
-            </label>
-          </div>
+<body id="loginBackground">
+<div class="login_container">
+  <div class="ui centered stackable grid">
+    <div class="six wide column">
+      <div class="logo"></div>
+      <% if params[:action] == 'create' && flash[:alert].present? %>
+        <div class="ui negative message">
+          <i class="close icon"></i>
+          <p><%= flash[:alert] %></p>
         </div>
-        <div class="col-xs-4">
-          <!--<button type="submit" class="btn btn-primary btn-block btn-flat" onclick="login()">LOGIN</button>-->
-          <input class="btn btn-primary btn-block btn-flat" name="commit" type="submit" value="LOGIN">
+      <% end %>
+      <div class="ui segments" align="center">
+        <div class="ui segment">
+          <%= simple_form_for resource, as: resource_name, url: session_path(resource_name), html: { id: 'login_form', novalidate: true, class: 'ui form' } do |f|  %>
+            <div class="field">
+              <div class="ui left icon input">
+                <%= f.input_field :email, placeholder: '用户名' %>
+                <i class="user icon"></i>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui left icon input">
+                <%= f.input_field :password, placeholder: '密码' %>
+                <i class="lock icon"></i>
+              </div>
+            </div>
+            <div class="field" style="text-align: left;">
+              <div class="ui checkbox">
+                <%= f.check_box :remember_me %>
+                <label for="remember">记住用户名</label>
+              </div>
+            </div>
+            <%= f.button :submit, value: '登录', class: 'ui big fluid blue icon button login_btn'  %>
+          <% end %>
         </div>
       </div>
-    <% end %>
-    <%= link_to "Forgot password?", forget_password_admin_employees_path , class: "fr" %>
+    </div>
   </div>
 </div>
-
-
+</body>
+</html>

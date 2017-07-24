@@ -1,4 +1,4 @@
- class AttachmentsController < ApplicationController
+ class Admin::AttachmentsController < Admin::BaseController
   before_action :set_attachment
 
   def new

@@ -1,5 +1,5 @@
-
-<%= form_for @article, :html => { :multipart => true } do |f| %>
+<br/><br/>
+<%= form_for @article, url: url, method: meth, :html => { :multipart => true } do |f| %>
   <div class="field">
     <%= file_field_tag "draft_img", id: 'draft_img' %>
   </div>
@@ -21,7 +21,7 @@
   <div class="control-group optional form-group field" style="margin-top: 10px" >
 	  <%= f.label :content, 'Content', class: 'password optional control-label' %>
 	  <div class="controls">
-	    <%= text_area_tag 'article[content]', @article.content, { rows: 400, class: 'form-control input-sm'  } %>
+	    <%= text_area_tag 'article[content]', @article.content, { rows: 100, class: 'form-control input-sm'  } %>
 	  </div>
   </div>
   
