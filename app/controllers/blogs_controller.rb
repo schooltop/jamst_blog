@@ -7,7 +7,7 @@ class BlogsController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    @article.update(view_count: @article.view_count + 1)
+    @article.update(view_count: @article.view_count.to_i + 1)
   end
 
   def top_search

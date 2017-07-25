@@ -7,24 +7,18 @@
       <% @articles.each do |article| %>
         <article class="am-g blog-entry-article">
             <div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-img">
-              <%= image_tag article.cover_img_path, class: "am-u-sm-12" %>
-                <!-- <img src="assets/i/f10.jpg" alt="" class="am-u-sm-12"> -->
+                <%= image_tag article.cover_img_path, class: "am-u-sm-12" %>
             </div>
             <div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-text">
                 <span><a href="/blogs/<%= article.id %>" class="blog-color">article &nbsp;</a></span>
                 <span> @<%= article.user_name %> &nbsp;</span>
                 <span><%= show_db_time(article.created_at) %></span>
                 <h1><a href="/blogs/<%= article.id %>"><%= article.title %></a></h1>
-                <p><%= article.content.html_safe[1..100] %></p>
+                <p><%= article.content.html_safe.truncate_words(50) %></p>
                 <p><a href="/blogs/<%= article.id %>" class="blog-continue">continue reading</a></p>
             </div>
         </article>
       <% end %>
-      
-      <!-- <ul class="am-pagination">
-        <li class="am-pagination-prev"><a href="">&laquo; Prev</a></li>
-        <li class="am-pagination-next"><a href="">Next &raquo;</a></li>
-      </ul> -->
 
       <%= paginate(@articles, :theme => 'web')%>
 

@@ -7,7 +7,7 @@
   <div class="control-group optional form-group field" style="margin-top: 10px" >
 	  <%= f.label :category, 'Category', class: 'password optional control-label' %>
 	  <div class="controls">
-	    <%= f.select :category_id, options_for_select(Category.all.collect { |p| [ p.name, p.id ] }, ''), {include_blank: true}, {class: 'form-control input-sm', style: 'width: 280px;' } %>
+	    <%= f.select :category_id, options_for_select(Category.all.collect { |p| [ p.name, p.id ] }, @article.category_id ), {include_blank: true}, {class: 'form-control input-sm', style: 'width: 280px;' } %>
 	  </div>
   </div>
 
@@ -21,12 +21,12 @@
   <div class="control-group optional form-group field" style="margin-top: 10px" >
 	  <%= f.label :content, 'Content', class: 'password optional control-label' %>
 	  <div class="controls">
-	    <%= text_area_tag 'article[content]', @article.content, { rows: 100, class: 'form-control input-sm'  } %>
+	    <%= text_area_tag 'article[content]', @article.content, style: "height: 600px;max-height: 800px"  %>
 	  </div>
   </div>
   
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "提交"%>
   </div>
 <% end %>
 
@@ -38,7 +38,7 @@
 		//富文本编辑器初始化
 		var editor = new wangEditor('article_content');
 		//图片上传配置
-		editor.config.uploadImgUrl = "/articles/upload_image";
+		editor.config.uploadImgUrl = "/admin/articles/upload_image";
 		editor.config.uploadImgFileName = "wang_editor_file"
 		editor.config.uploadHeaders = {
 		'Accept' : 'text/x-json',
