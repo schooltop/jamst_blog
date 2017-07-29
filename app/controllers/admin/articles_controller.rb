@@ -26,10 +26,9 @@ class Admin::ArticlesController < Admin::BaseController
   # POST /articles.json
   def create
     @article = Article.new(article_params)
-    attachment = Attachment.create(attachment_entity_type: "Article", path: params[:draft_img], created_by: 1 ) unless params[:draft_img].blank?
-    @article.cover_img = attachment.id
     respond_to do |format|
       if @article.save
+        create_attachment
         format.html { redirect_to :action=>"index" }
         format.json { render :show, status: :created, location: @article }
       else
@@ -39,15 +38,20 @@ class Admin::ArticlesController < Admin::BaseController
     end
   end
 
+  def create_attachment
+    unless params[:draft_img].blank?
+      attachment = Attachment.create(attachment_entity_type: "Article",attachment_entity_id: @article.id, path: params[:draft_img], created_by: 1 ) 
+      @article.cover_img = attachment.id
+      @article.save
+    end
+  end
+
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
     respond_to do |format|
-      unless params[:draft_img].blank?
-        attachment = Attachment.create(attachment_entity_type: "Article", path: params[:draft_img], created_by: 1 ) 
-        article_params[:cover_img] = attachment.id
-      end
       if @article.update(article_params)
+        create_attachment
         format.html { redirect_to :action=>"index" }
         format.json { render :show, status: :ok, location: @article }
       else
