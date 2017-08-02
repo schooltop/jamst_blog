@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
   resources :pictures, only: [:index]
   namespace :admin do
+    root to: 'employees#index'
     resources :users
     resources :categories
     resources :tags
