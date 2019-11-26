@@ -1,28 +1,23 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+gem install bundle
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+bundle install
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+# 安装初始化mysql数据库
+rake db:create
+
+rake db:migrate 
+
+rake db:seed
+
+# 启动3000端口
+rails s
+
+
+# 访问前台
+http://localhost:3000/
+
+# 访问后台
+http://localhost:3000/admin/login

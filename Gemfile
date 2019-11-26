@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'https://gems.ruby-china.com'
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
@@ -22,7 +22,7 @@ gem 'cancancan'
 gem 'rolify'
 
 # Store
-gem 'mysql2'
+gem 'mysql2', '~> 0.4.4'
 
 #Third Part
 gem 'httparty'
@@ -36,7 +36,7 @@ gem 'spreadsheet'
 gem 'roo'
 gem 'whenever', :require => false
 gem 'kaminari', github: 'amatsuda/kaminari'
-gem 'default_where', github: 'qinmingyuan/default_where'
+gem 'default_where', github: 'jamst/default_where'
 gem 'csv-importer', github: 'xor3/csv-importer'
 gem 'roo-xls', github: 'roo-rb/roo-xls'
 gem 'cocoon'
@@ -46,13 +46,13 @@ gem 'seventeen_mon'
 # Engines
 # gem 'the_history', github: 'yigexiangfa/the_history', tag: 'v0.2.7'
 # gem 'rails_log', github: 'qinmingyuan/rails_log', tag: 'v2.0'
-gem 'rails_com', github: 'qinmingyuan/rails_com', tag: 'v0.7.3' 
-gem 'default_form', github: 'qinmingyuan/default_form', tag: 'v2.4'
+# gem 'rails_com', github: 'qinmingyuan/rails_com', tag: 'v0.7.3' 
+# gem 'default_form', github: 'qinmingyuan/default_form', tag: 'v2.4'
 
 
 group :development, :test do
-  gem 'factory_girl'
-  gem 'factory_girl_rails'
+  # gem 'factory_girl'
+  # gem 'factory_girl_rails'
   gem 'pry-rails'
   gem 'database_cleaner'
   gem 'byebug', platform: :mri
